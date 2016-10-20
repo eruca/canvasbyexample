@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="utils.js"></script>
+</head>
+<body>
+	<canvas width="400" height="400" id="canvas">
+		<p>This browser does not support the<code>canvas</code> element.</p>
+	</canvas>
+	<script type="text/javascript">
+		window.onload = function(){
+			var canvas = document.getElementById('canvas'),
+				mouse = utils.captureMouse(canvas);
+
+			console.log("onload");
+			canvas.addEventListener('mousedown', function(){
+				console.log("x: " + mouse.x + ", y:" + mouse.y);
+			},false)
+		};
+	</script>
+</body>
+</html>
